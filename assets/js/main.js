@@ -1,16 +1,28 @@
-// Animate sections when scrolled into view
-const fadeElems = document.querySelectorAll('.fade-in, .animate-up');
+// Animate sections on scroll
+document.addEventListener("DOMContentLoaded", () => {
+  const faders = document.querySelectorAll(".fade-in");
+  const sliders = document.querySelectorAll(".animate-up");
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.style.animationPlayState = 'running';
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
+  const appearOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.style.animationPlayState = "running";
+      appearOnScroll.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => {
+    fader.style.animationPlayState = "paused";
+    appearOnScroll.observe(fader);
   });
-}, { threshold: 0.2 });
 
-fadeElems.forEach(el => {
-  observer.observe(el);
+  sliders.forEach(slider => {
+    slider.style.animationPlayState = "paused";
+    appearOnScroll.observe(slider);
+  });
 });
