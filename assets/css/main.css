@@ -8,26 +8,30 @@
   margin-top: 30px;
 }
 
-/* Text */
+/* Text Content */
 .about-content .text {
-  flex: 1 1 400px; /* Text takes remaining space */
-  min-width: 280px; /* Prevent shrinking too small */
+  flex: 1 1 400px;
+  min-width: 280px;
+}
+
+/* Image Wrapper – constrain size */
+.about-content .image-wrapper {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 300px;   /* Definitive maximum width */
+  display: flex;
+  justify-content: center;
 }
 
 /* Profile Image */
-.about-content .image {
-  flex: 0 0 auto;  /* Image keeps size defined by max-width */
-  max-width: 350px; /* Never exceed 350px */
-  width: 100%;      /* Fill its container width */
-}
-
-.about-content .image img {
+.about-content .image-wrapper img {
   width: 100%;
-  height: auto;          /* Keep aspect ratio */
-  border-radius: 15px;   /* Rounded corners */
+  height: auto;           /* Keep aspect ratio */
+  max-height: 400px;      /* Prevent overly tall images */
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   display: block;
-  object-fit: cover;     /* Prevent stretching */
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* Optional shadow */
 }
 
 /* Skills Section */
@@ -39,8 +43,8 @@
 }
 
 .skills span {
-  background-color: #e0f2f1; /* light green */
-  color: #00695c;             /* dark green text */
+  background-color: #e0f2f1;
+  color: #00695c;
   padding: 6px 12px;
   border-radius: 12px;
   font-size: 0.95em;
@@ -56,7 +60,8 @@
     text-align: center;
   }
 
-  .about-content .image {
+  .about-content .image-wrapper {
     max-width: 250px;
+    margin-bottom: 20px;
   }
 }
