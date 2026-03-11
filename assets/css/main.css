@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+/* ---------------------------
+   GLOBAL
+---------------------------- */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Poppins', sans-serif; line-height:1.8; color:#333; background:#f5f5f5; }
+a { text-decoration:none; color:inherit; }
+
+/* ---------------------------
+   BUTTONS
+---------------------------- */
+.button {
+  display:inline-block;
+  padding:12px 25px;
+  background-color:#1f7a1f;
+  color:white;
+  border-radius:6px;
+  margin:10px 15px;
+  transition:all 0.3s ease;
+  font-weight:500;
+}
+.button:hover { background-color:#0c5c0c; transform:scale(1.05); }
+
+/* ---------------------------
+   HERO
+---------------------------- */
+#hero {
+  background:linear-gradient(135deg, #1f7a1f, #1f7a7a);
+  color:white; text-align:center; padding:120px 20px;
+}
+#hero h1{ font-size:3em; margin-bottom:10px; }
+#hero h2{ font-weight:300; margin-bottom:20px; }
+#hero p{ max-width:700px; margin:0 auto 20px auto; font-size:1.1em; }
+
+/* ---------------------------
+   ABOUT
+---------------------------- */
+#about{ padding:80px 20px; background:#fff; }
+#about h2{ text-align:center; margin-bottom:40px; font-size:2.5em; color:#1f7a1f; }
+.about-content { display:flex; flex-wrap:wrap; align-items:center; gap:40px; justify-content:center; }
+.about-content .text{flex:1; min-width:250px; max-width:600px;}
+.about-content .image{flex:1; min-width:250px; max-width:400px;}
+.about-content img{width:100%; border-radius:10px; display:block; margin-top:15px;}
+.skills span{display:inline-block; background:#e6f5ea; color:#1f7a1f; padding:6px 12px; border-radius:5px; margin:5px; font-weight:500;}
+
+/* ---------------------------
+   PROJECTS
+---------------------------- */
+#projects{ padding:80px 20px; background:#e6f5ea; }
+#projects h2{ text-align:center; margin-bottom:40px; font-size:2.5em; color:#1f7a1f; }
+.projects-grid{ display:flex; flex-wrap:wrap; gap:30px; justify-content:center; }
+
+.project-card{
+  background:#fff; padding:25px; border-radius:12px; width:320px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1); text-align:center;
+  transition:0.3s ease; opacity:0; transform:translateY(20px);
+}
+.project-card:hover{ transform:translateY(-6px); box-shadow:0 10px 20px rgba(0,0,0,0.2); }
+
+.project-card img{ width:100%; border-radius:10px; margin-bottom:20px; }
+.project-img-container{position:relative; overflow:hidden; border-radius:10px;}
+.project-img-container .overlay{
+  position:absolute; top:0; left:0; width:100%; height:100%;
+  background:rgba(31,122,122,0.8); color:white;
+  display:flex; align-items:center; justify-content:center; font-weight:500; font-size:1em;
+  opacity:0; transition:0.3s ease;
+}
+.project-img-container:hover .overlay{opacity:1;}
+
+/* ---------------------------
+   FOOTER
+---------------------------- */
+footer{ background:#1f7a1f; color:white; text-align:center; padding:50px 20px; }
+footer a{ color:white; margin:0 12px; transition:0.3s ease; }
+footer a:hover{ color:#1fda1f; }
+
+/* ---------------------------
+   VIDEO
+---------------------------- */
+.video-container{ display:flex; justify-content:center; align-items:center; margin:40px auto; animation:fadeIn 1s ease; }
+.rotate-video{ transform:rotate(-90deg); width:auto; height:80vh; max-width:100%; border-radius:12px; }
+
+@media(max-width:768px){
+  .about-content{flex-direction:column;text-align:center;}
+  .about-content .image, .about-content .text{max-width:100%;}
+  .projects-grid{flex-direction:column; align-items:center;}
+  .rotate-video{height:60vh;}
+}
+
+/* ---------------------------
+   ANIMATIONS
+---------------------------- */
+.fade-in{opacity:0; animation:fadeIn 1s forwards;}
+.delay-1{animation-delay:0.3s;}
+.delay-2{animation-delay:0.6s;}
+.delay-3{animation-delay:0.9s;}
+.animate-up{opacity:0; transform:translateY(20px); animation:slideUp 0.8s forwards;}
+@keyframes fadeIn{0%{opacity:0; transform:translateY(20px);} 100%{opacity:1; transform:translateY(0);}}
+@keyframes slideUp{to{opacity:1; transform:translateY(0);}}

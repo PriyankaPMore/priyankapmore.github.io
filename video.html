@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Demo | Priyanka Pratap More</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      background: #f5f5f5;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #1f7a1f;
+    }
+
+    .button {
+      margin: 20px 15px;
+    }
+
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 40px auto;
+      animation: fadeIn 1s ease;
+    }
+
+    .rotate-video {
+      transform: rotate(-90deg);
+      width: auto;
+      height: 80vh;
+      max-width: 100%;
+      border-radius: 12px;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px);}
+      100% { opacity: 1; transform: translateY(0);}
+    }
+
+    @media (max-width: 768px) {
+      .rotate-video { height: 60vh; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Project Demo Video</h1>
+
+<a href="index.html" class="button">Back to Portfolio</a>
+
+<div class="video-container">
+  <video class="rotate-video" controls>
+    <source src="assets/videos/demo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<a href="index.html" class="button">Back to Portfolio</a>
+
+</body>
+</html>
